@@ -1,0 +1,33 @@
+name: Verificacao do site ao vivo
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+jobs:
+  verificar-paginas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checar as 4 paginas do site
+        run: |
+          set -e
+          for url in \
+            "https://gisa48.github.io/reset-feminino-50/index.html" \
+            "https://gisa48.github.io/reset-feminino-50/politica-de-privacidade.html" \
+            "https://gisa48.github.io/reset-feminino-50/termos-de-uso.html" \
+            "https://gisa48.github.io/reset-feminino-50/contato.html"
+          do
+            echo "Checando: $url"
+            status=$(curl -s -o pagina.html -w "%{http_code}" "$url")
+            if [ "$status" != "200" ]; then
+              echo "FALHA: $url respondeu com status $status"
+              exit 1
+            fi
+            if ! grep -q "Mayra Sterling Wellness" pagina.html; then
+              echo "FALHA: $url nao contem o texto esperado (pagina pode estar corrompida)"
+              exit 1
+            fi
+            echo "OK: $url"
+          done
+          echo "Todas as paginas estao no ar e com conteudo correto."
