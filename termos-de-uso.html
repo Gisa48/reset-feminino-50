@@ -204,7 +204,8 @@ footer.rodape-legal a { color: var(--verde-medio); text-decoration: underline; }
 
 <footer class="rodape-legal">
   Método Reset Feminino 50+ · <a href="index.html">Voltar para a página inicial</a><br>
-  © 2025–2026 Mayra Sterling Wellness · Todos os direitos reservados
+  © 2025–<span id="ano-atual">2026</span> Mayra Sterling Wellness · Todos os direitos reservados
+<script>document.getElementById('ano-atual').textContent=new Date().getFullYear();</script>
 </footer>
 
 </body>
