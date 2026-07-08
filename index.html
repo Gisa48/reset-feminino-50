@@ -5,17 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Método Reset Feminino 50+ | Reequilibre hormônios e recupere sua energia</title>
 <meta name="description" content="Programa completo de 6 módulos para mulheres acima dos 50 anos: cortisol, sono, clareza mental, intestino, metabolismo hormonal e plano de 90 dias. Inclui 5 bônus exclusivos. Acesso imediato.">
-<meta name="theme-color" content="#5C6B52">
+<meta name="theme-color" content="#1C3A2E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/iconfont/tabler-icons.min.css">
 <style>
   :root{
-    --verde-escuro:#5C6B52;
-    --verde:#7C8F6E;
+    --verde-escuro:#1C3A2E;
+    --verde:#2F5D46;
     --sage-claro:#E9EEE3;
     --gold-claro:#F5EAD2;
     --dourado:#C9A24B;
     --dourado-claro:#E4C77A;
+    --terracota:#C97C5D;
+    --terracota-claro:#F5E4D8;
     --creme:#FBF6EC;
     --creme-escuro:#F3E9D4;
     --texto:#2B2A26;
@@ -112,27 +115,13 @@
     max-width:640px;
     display:flex;
     justify-content:center;
-    gap:18px;
-    flex-wrap:wrap;
   }
-  .book-mock{
-    width:150px;height:210px;
-    border-radius:6px;
-    background:linear-gradient(150deg,var(--dourado-claro),var(--dourado));
-    box-shadow:0 20px 40px rgba(0,0,0,.35);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:18px;
-    color:var(--verde-escuro);
-    font-family:'Playfair Display',serif;
-    font-weight:700;
-    font-size:15px;
-    text-align:center;
-    transform:rotate(-4deg);
+  .hero-book{
+    width:230px;
+    border-radius:16px;
+    box-shadow:0 30px 60px rgba(0,0,0,.4);
+    transform:rotate(-3deg);
   }
-  .book-mock.b2{transform:rotate(3deg);background:linear-gradient(150deg,#fff,#EDE3C8);font-size:13px;}
-  .book-mock.b3{transform:rotate(-1deg) translateY(14px);background:linear-gradient(150deg,var(--verde),var(--verde-escuro));color:var(--creme);font-size:13px;}
   .trust-row{
     margin-top:34px;
     display:flex;justify-content:center;gap:28px;flex-wrap:wrap;
@@ -143,21 +132,15 @@
   .sintomas h2{font-size:clamp(26px,4vw,38px);text-align:center;max-width:640px;margin:0 auto 16px;font-weight:600;}
   .sintomas > .container > p{text-align:center;color:var(--texto-suave);max-width:560px;margin:0 auto 48px;}
   .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
   .sintoma-card{
-    background:var(--sage-claro);
-    border:none;
-    border-radius:16px;
-    padding:24px;
-    display:flex;gap:14px;align-items:flex-start;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 14px 34px rgba(28,58,46,.16);
+    transition:transform .2s ease, box-shadow .2s ease;
   }
-  .sintoma-card .icon-dot{
-    width:34px;height:34px;flex-shrink:0;border-radius:50%;
-    background:var(--branco);display:flex;align-items:center;justify-content:center;
-  }
-  .sintoma-card .icon-dot svg{width:16px;height:16px;stroke:var(--verde-escuro);}
-  .sintoma-card.t2{background:var(--creme-escuro);}
-  .sintoma-card.t3{background:var(--gold-claro);}
-  .sintoma-card p{font-size:15px;font-weight:500;margin-top:6px;}
+  .sintoma-card:hover{transform:translateY(-6px);box-shadow:0 20px 42px rgba(28,58,46,.22);}
+  .sintoma-card img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block;}
   .callout{
     margin-top:40px;text-align:center;font-size:18px;color:var(--verde-escuro);font-weight:600;
     max-width:600px;margin-left:auto;margin-right:auto;
@@ -181,28 +164,37 @@
   .bonus h2{font-size:clamp(26px,4vw,38px);text-align:center;max-width:600px;margin:0 auto 12px;font-weight:600;}
   .bonus > .container > p.sub{text-align:center;color:var(--texto-suave);margin-bottom:48px;}
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .grid-bonus{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
   .bonus-card{
-    background:var(--branco);border:1px solid #EFE6D2;border-radius:16px;padding:26px;
+    background:var(--branco);border:none;border-radius:22px;overflow:hidden;position:relative;
+    box-shadow:0 14px 34px rgba(28,58,46,.12);
+    transition:transform .2s ease, box-shadow .2s ease;
   }
-  .bonus-card .icon{font-size:26px;margin-bottom:10px;}
+  .bonus-card:hover{transform:translateY(-6px);box-shadow:0 20px 42px rgba(28,58,46,.18);}
+  .bonus-card img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block;}
+  .bonus-body{padding:20px 22px 24px;}
   .bonus-card h3{font-size:16px;margin-bottom:6px;font-weight:600;}
-  .bonus-card p{font-size:14px;color:var(--texto-suave);margin-bottom:10px;}
-  .bonus-card .valor{font-size:13px;color:var(--dourado);font-weight:700;}
-  .bonus-main{
-    grid-column:1/-1;
-    background:linear-gradient(120deg,var(--verde-escuro),var(--verde));
-    color:var(--creme);border:none;
-    display:flex;align-items:center;gap:20px;
+  .bonus-card p{font-size:14px;color:var(--texto-suave);margin-bottom:12px;}
+  .bonus-card .valor{
+    display:inline-block;font-size:12px;color:var(--branco);font-weight:700;
+    background:var(--terracota);padding:4px 12px;border-radius:100px;
   }
-  .bonus-main .icon{font-size:34px;}
-  .bonus-main h3{font-size:20px;color:var(--creme);}
-  .bonus-main p{color:var(--creme-escuro);}
+  .bonus-main{border:1.5px solid var(--dourado);}
+  .bonus-main img{object-position:top;}
+  .bonus-main::before{
+    content:"incluído";
+    position:absolute;top:14px;left:14px;z-index:2;
+    background:var(--dourado);color:var(--verde-escuro);
+    font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    padding:4px 12px;border-radius:100px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+  }
 
   /* TESTIMONIALS */
   .depoimentos{background:var(--creme-escuro);}
   .depoimentos h2{font-size:clamp(26px,4vw,38px);text-align:center;max-width:600px;margin:0 auto 48px;font-weight:600;}
   .dep-card{
-    background:var(--branco);border-radius:16px;padding:28px;border:1px solid #EFE6D2;
+    background:var(--branco);border-radius:22px;padding:28px;border:1px solid #EFE6D2;
   }
   .dep-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
   .avatar{
@@ -232,7 +224,7 @@
   .pricing h2{font-size:clamp(26px,4vw,38px);font-weight:600;margin-bottom:8px;}
   .price-card{
     max-width:420px;margin:36px auto 0;background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:36px;
+    border:1px solid rgba(255,255,255,.18);border-radius:26px;padding:36px;
   }
   .price-old{font-size:16px;color:var(--creme-escuro);text-decoration:line-through;opacity:.7;}
   .price-new{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--dourado-claro);margin:6px 0 4px;}
@@ -248,7 +240,7 @@
   /* FAQ */
   .faq h2{font-size:clamp(26px,4vw,38px);text-align:center;max-width:600px;margin:0 auto 40px;font-weight:600;}
   details{
-    background:var(--branco);border:1px solid #EFE6D2;border-radius:14px;padding:18px 22px;margin-bottom:12px;
+    background:var(--branco);border:1px solid #EFE6D2;border-radius:18px;padding:18px 22px;margin-bottom:12px;
   }
   summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none;}
   summary::-webkit-details-marker{display:none;}
@@ -265,8 +257,13 @@
   @media(max-width:760px){
     .grid-3{grid-template-columns:1fr;}
     .grid-2{grid-template-columns:1fr;}
+    .grid-4{grid-template-columns:1fr 1fr;}
+    .grid-bonus{grid-template-columns:1fr;}
     section{padding:56px 0;}
     .hero{padding:48px 0 64px;}
+  }
+  @media(max-width:480px){
+    .grid-4{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -279,9 +276,7 @@
     <p class="lead">Um programa de 6 módulos para reequilibrar hormônios, recuperar o sono e a energia — com um plano claro, não dicas soltas.</p>
     <a href="https://pay.hotmart.com/F106326458Q" class="btn">🌿 Quero meu acesso agora →</a>
     <div class="hero-visual">
-      <div class="book-mock">MÉTODO RESET FEMININO 50+</div>
-      <div class="book-mock b2">PLANNER HORMONAL 90 DIAS</div>
-      <div class="book-mock b3">GUIA DE EXAMES</div>
+      <img src="images/capa-livro.jpg" alt="Método Reset Feminino 50+" class="hero-book">
     </div>
     <div class="trust-row">
       <span>🔒 Acesso imediato</span>
@@ -296,15 +291,15 @@
     <span class="eyebrow">Você se reconhece?</span>
     <h2>Isso não é "só a idade". É uma reorganização hormonal profunda.</h2>
     <p>Se você está passando por algum desses sintomas, saiba que não está sozinha — e que há uma explicação científica para cada um deles.</p>
-    <div class="grid-3">
-      <div class="sintoma-card"><span class="icon-dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span><p>Acordo cansada mesmo depois de dormir</p></div>
-      <div class="sintoma-card t2"><span class="icon-dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 116.71-9h.79a4.5 4.5 0 010 9z"/></svg></span><p>Esqueço palavras no meio de uma conversa</p></div>
-      <div class="sintoma-card t3"><span class="icon-dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><p>A barriga aumentou sem mudar a dieta</p></div>
-      <div class="sintoma-card"><span class="icon-dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span><p>Acordo às 3h da manhã e não consigo dormir</p></div>
-      <div class="sintoma-card t2"><span class="icon-dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 6-2.5 6-6.5 0-3-1.5-4.5-2.5-6.5-.5 2-1.5 3-2.5 3 0-3 0-6-3-8-1 3-4 4.5-4 8.5C6 16 6 22 12 22z"/></svg></span><p>Ondas de calor que interrompem tudo</p></div>
-      <div class="sintoma-card t3"><span class="icon-dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span><p>Humor instável sem motivo aparente</p></div>
-      <div class="sintoma-card"><span class="icon-dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M9 4h6v3H9z"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg></span><p>Exames "normais" mas me sinto mal</p></div>
-      <div class="sintoma-card t2"><span class="icon-dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><p>Energia que desapareceu e não volta</p></div>
+    <div class="grid-4">
+      <div class="sintoma-card"><img src="images/sint-acorda-cansada.jpg" alt="Acordo cansada mesmo depois de dormir" loading="lazy"></div>
+      <div class="sintoma-card"><img src="images/sint-esquece-palavras.jpg" alt="Esqueço palavras no meio de uma conversa" loading="lazy"></div>
+      <div class="sintoma-card"><img src="images/sint-barriga.jpg" alt="A barriga aumentou sem mudar a dieta" loading="lazy"></div>
+      <div class="sintoma-card"><img src="images/sint-3h-manha.jpg" alt="Acordo às 3h da manhã e não consigo dormir" loading="lazy"></div>
+      <div class="sintoma-card"><img src="images/sint-ondas-calor.jpg" alt="Ondas de calor que interrompem tudo" loading="lazy"></div>
+      <div class="sintoma-card"><img src="images/sint-humor.jpg" alt="Humor instável sem motivo aparente" loading="lazy"></div>
+      <div class="sintoma-card"><img src="images/sint-exames.jpg" alt="Exames normais mas me sinto mal" loading="lazy"></div>
+      <div class="sintoma-card"><img src="images/sint-energia.jpg" alt="Energia que desapareceu e não volta" loading="lazy"></div>
     </div>
     <p class="callout">Quando você entende o que está acontecendo, tudo muda.</p>
   </div>
@@ -347,16 +342,16 @@
     <span class="eyebrow">Tudo incluído</span>
     <h2>O programa completo para sua renovação</h2>
     <p class="sub">Livro principal + 5 bônus exclusivos. Tudo que você precisa para os próximos 90 dias.</p>
-    <div class="grid-2">
+    <div class="grid-bonus">
       <div class="bonus-card bonus-main">
-        <span class="icon">📘</span>
-        <div><h3>Método Reset Feminino 50+ — Livro Principal</h3><p>70 páginas com 6 módulos completos: cortisol, sono, clareza mental, intestino, metabolismo hormonal e plano de 90 dias.</p></div>
+        <img src="images/capa-livro.jpg" alt="Livro Principal" loading="lazy">
+        <div class="bonus-body"><h3>Livro Principal</h3><p>70 páginas com 6 módulos completos: cortisol, sono, clareza mental, intestino, metabolismo hormonal e plano de 90 dias.</p></div>
       </div>
-      <div class="bonus-card"><span class="icon">🍽️</span><h3>Bônus 1 — 50 Receitas Anti-inflamatórias</h3><p>Cafés da manhã, almoços, jantares, lanches e bebidas funcionais.</p><span class="valor">Valor: R$37</span></div>
-      <div class="bonus-card"><span class="icon">📔</span><h3>Bônus 2 — Planner Hormonal 90 Dias</h3><p>Acompanhe seus hábitos semana a semana, com controle de sintomas.</p><span class="valor">Valor: R$27</span></div>
-      <div class="bonus-card"><span class="icon">🩺</span><h3>Bônus 3 — Guia Completo de Exames Femininos</h3><p>Lista detalhada de exames para imprimir e levar à consulta.</p><span class="valor">Valor: R$17</span></div>
-      <div class="bonus-card"><span class="icon">🛒</span><h3>Bônus 4 — Lista de Compras Anti-inflamatória</h3><p>Alimentos prioritários com dica de onde encontrar no Brasil.</p><span class="valor">Valor: R$17</span></div>
-      <div class="bonus-card"><span class="icon">📅</span><h3>Bônus 5 — Calendário de Hábitos 90 Dias</h3><p>Visão mensal dos 3 meses com controle diário de água, sono, energia.</p><span class="valor">Valor: R$17</span></div>
+      <div class="bonus-card"><img src="images/bonus-1-receitas.jpg" alt="Bônus 1 — 50 Receitas Anti-inflamatórias" loading="lazy"><div class="bonus-body"><h3>Bônus 1 — 50 Receitas Anti-inflamatórias</h3><p>Cafés da manhã, almoços, jantares, lanches e bebidas funcionais.</p><span class="valor">Valor: R$37</span></div></div>
+      <div class="bonus-card"><img src="images/bonus-2-planner.jpg" alt="Bônus 2 — Planner Hormonal 90 Dias" loading="lazy"><div class="bonus-body"><h3>Bônus 2 — Planner Hormonal 90 Dias</h3><p>Acompanhe seus hábitos semana a semana, com controle de sintomas.</p><span class="valor">Valor: R$27</span></div></div>
+      <div class="bonus-card"><img src="images/bonus-3-exames.jpg" alt="Bônus 3 — Guia de Exames Femininos" loading="lazy"><div class="bonus-body"><h3>Bônus 3 — Guia de Exames Femininos</h3><p>Lista detalhada de exames para imprimir e levar à consulta.</p><span class="valor">Valor: R$17</span></div></div>
+      <div class="bonus-card"><img src="images/bonus-4-lista.jpg" alt="Bônus 4 — Lista de Compras Anti-inflamatória" loading="lazy"><div class="bonus-body"><h3>Bônus 4 — Lista de Compras Anti-inflamatória</h3><p>Alimentos prioritários com dica de onde encontrar no Brasil.</p><span class="valor">Valor: R$17</span></div></div>
+      <div class="bonus-card"><img src="images/bonus-5-calendario.jpg" alt="Bônus 5 — Calendário de Hábitos 90 Dias" loading="lazy"><div class="bonus-body"><h3>Bônus 5 — Calendário de Hábitos 90 Dias</h3><p>Visão mensal dos 3 meses com controle diário de água, sono, energia.</p><span class="valor">Valor: R$17</span></div></div>
     </div>
   </div>
 </section>
@@ -454,3 +449,4 @@
 
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            a
