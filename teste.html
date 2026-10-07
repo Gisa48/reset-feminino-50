@@ -44,6 +44,13 @@ h1,h2,h3{font-family:'Playfair Display',serif;color:var(--vd);}
 .hide{display:none;}
 .actions{display:flex;flex-direction:column;gap:12px;align-items:stretch;}
 .actions .btn{text-align:center;}
+.cap input[type=text],.cap input[type=email]{display:block;width:100%;padding:14px 16px;border:2px solid var(--cremee);border-radius:12px;font-size:16px;font-family:inherit;margin-bottom:10px;background:#fff;}
+.cap input:focus{outline:none;border-color:var(--v);}
+.cap .gdpr{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--txs);margin:6px 0 14px;text-align:left;}
+.cap .gdpr input{margin-top:3px;}
+.cap .btn{width:100%;}
+.cap .lgpd{font-size:11.5px;color:var(--txs);margin-top:10px;}
+.cap .lgpd a{color:inherit;}
 </style>
 </head>
 <body>
@@ -76,11 +83,25 @@ h1,h2,h3{font-family:'Playfair Display',serif;color:var(--vd);}
       <h3 style="font-size:18px;margin-top:10px">Onde o seu corpo está pedindo mais atenção</h3>
       <div class="areas" id="rAreas"></div>
       <div class="box">
-        <h3>🎁 Seu presente: o guia dos 7 sinais</h3>
-        <p style="font-size:15px;margin-bottom:16px">O que cada sinal quer dizer, o que fazer ainda hoje, um checklist para levar à consulta e um diário de 7 dias.</p>
-        <div class="actions">
-          <a class="btn" id="btnGuia" href="7-sinais-reset-feminino-50.pdf" target="_blank" rel="noopener" onclick="track('baixar_guia')">📖 Baixar meu guia gratuito</a>
-        </div>
+        <h3>🎁 Receba seu guia gratuito dos 7 sinais</h3>
+        <p style="font-size:15px;margin-bottom:16px">O que cada sinal quer dizer, o que fazer ainda hoje, um checklist para levar à consulta e um diário de 7 dias. Deixe seu e-mail e baixe na hora.</p>
+        <script src="//send.hotmart.com/static/js/recaptcha.min.js"></script>
+        <form class="cap" klicksend-form-id='plu3AOz' autocomplete='off' method="post" action="//handler.send.hotmart.com/subscription/plu3AOz?hotfeature=53" onsubmit="track('lead_teste')">
+          <input type="text" autocomplete="off" name="first_name" id="first_name" placeholder="Seu primeiro nome" value="">
+          <input type="email" autocomplete="off" name="email" id="email" placeholder="Seu melhor e-mail" value="" required>
+          <label class="gdpr"><input type="checkbox" autocomplete="off" name="gdpr" id="gdpr" value="Concordo em receber os e-mails" required> Concordo em receber os e-mails da Mayra Sterling. Posso sair da lista quando quiser.</label>
+          <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" autocomplete="new-password" name="b_plu3AOz" tabindex="-1" value=""></div>
+          <button klicksend-form-submit-id='plu3AOz' class="g-recaptcha btn">📖 Quero meu guia gratuito</button>
+          <p class="lgpd">Seus dados são usados apenas para enviar conteúdos e ofertas. <a href="https://hotmart.com/pt-br/legal/privacidade-de-dados/" target="_blank" rel="noopener">Privacidade de dados</a>.</p>
+          <script>
+          var pageParams = new URLSearchParams(window.location.search);
+          var form = document.querySelector('form[klicksend-form-id="plu3AOz"]');
+          var formActionUrl = new URL(form.action);
+          var formActionSearchParams = formActionUrl.searchParams.size > 0 ? formActionUrl.searchParams.toString() + '&' : '';
+          var combinedParams = formActionSearchParams + pageParams.toString();
+          form.action = formActionUrl.origin + formActionUrl.pathname + '?' + combinedParams;
+          </script>
+        </form>
       </div>
       <div class="cta">
         <h3>Quer o caminho completo?</h3>
