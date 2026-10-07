@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teste: Seu corpo está pedindo um Reset? | Método Reset Feminino 50+</title>
+<meta name="description" content="Teste gratuito de 2 minutos para mulheres 50+: descubra quais sinais da menopausa o seu corpo está dando e receba o guia gratuito dos 7 sinais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--vd:#1C3A2E;--v:#2F5D46;--sage:#E9EEE3;--gold:#C9A24B;--goldc:#F5EAD2;--terrac:#F5E4D8;--creme:#FBF6EC;--cremee:#F3E9D4;--tx:#2B2A26;--txs:#5B5A54;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--creme);color:var(--tx);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Playfair Display',serif;color:var(--vd);}
+.wrap{max-width:640px;margin:0 auto;padding:32px 16px 48px;}
+.badge{display:inline-block;background:var(--goldc);color:var(--vd);font-size:13px;font-weight:600;padding:6px 14px;border-radius:99px;margin-bottom:18px;}
+.intro h1{font-size:clamp(28px,6vw,40px);line-height:1.15;margin-bottom:14px;}
+.intro p{font-size:17px;color:var(--txs);margin-bottom:18px;}
+.cred{font-size:14px;font-style:italic;color:var(--v);margin-bottom:26px;}
+.btn{display:inline-block;background:var(--gold);color:var(--vd);font-weight:700;font-size:17px;padding:16px 30px;border-radius:99px;border:0;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px rgba(201,162,75,.35);}
+.btn-sec{background:transparent;border:2px solid var(--vd);color:var(--vd);box-shadow:none;}
+.meta{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px;font-size:14px;color:var(--txs);}
+.card{background:#fff;border-radius:18px;padding:26px 22px;box-shadow:0 6px 24px rgba(28,58,46,.07);}
+.prog{height:8px;background:var(--cremee);border-radius:99px;overflow:hidden;margin-bottom:10px;}
+.prog div{height:100%;background:var(--v);width:0;transition:width .3s;}
+.count{font-size:13px;color:var(--txs);margin-bottom:16px;}
+.q h2{font-size:22px;line-height:1.3;margin-bottom:20px;}
+.opt{display:block;width:100%;text-align:left;background:var(--creme);border:2px solid var(--cremee);border-radius:12px;padding:15px 16px;font-size:16px;font-family:inherit;color:var(--tx);margin-bottom:10px;cursor:pointer;}
+.opt:hover,.opt:focus{border-color:var(--v);background:var(--sage);outline:none;}
+.voltar{background:none;border:0;color:var(--txs);font-size:14px;margin-top:8px;cursor:pointer;font-family:inherit;text-decoration:underline;}
+.res .nivel{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:8px;}
+.res h2{font-size:clamp(24px,5vw,32px);line-height:1.2;margin-bottom:14px;}
+.res p{font-size:16px;margin-bottom:14px;}
+.areas{margin:18px 0 22px;}
+.area{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px dashed var(--cremee);font-size:15px;}
+.bar{flex:0 0 40%;height:8px;background:var(--cremee);border-radius:99px;overflow:hidden;}
+.bar div{height:100%;background:var(--v);}
+.box{background:var(--sage);border-radius:14px;padding:20px;margin:22px 0;}
+.box h3{font-size:20px;margin-bottom:8px;}
+.cta{background:var(--vd);color:var(--creme);border-radius:14px;padding:22px;margin-top:10px;}
+.cta h3{color:var(--creme);font-size:20px;margin-bottom:8px;}
+.cta p{color:#DCE4DA;font-size:15px;}
+.aviso{font-size:12.5px;color:var(--txs);margin-top:28px;text-align:center;}
+.hide{display:none;}
+.actions{display:flex;flex-direction:column;gap:12px;align-items:stretch;}
+.actions .btn{text-align:center;}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <section id="intro" class="intro">
+    <span class="badge">🌿 Teste gratuito · 2 minutos</span>
+    <h1>Seu corpo está pedindo um Reset?</h1>
+    <p>Responda 10 perguntas rápidas e descubra quais sinais da menopausa o seu corpo está dando — e por onde começar.</p>
+    <p class="cred">Criado por Mayra Sterling, ex-técnica de enfermagem com mais de 10 anos de home care — que também passou pela menopausa.</p>
+    <button class="btn" onclick="comecar()">Começar o teste →</button>
+    <div class="meta"><span>✅ 100% gratuito</span><span>🔒 Sem cadastro para fazer</span><span>📄 Guia de presente no final</span></div>
+  </section>
+
+  <section id="quiz" class="hide">
+    <div class="card q">
+      <div class="prog"><div id="barra"></div></div>
+      <div class="count" id="contador"></div>
+      <h2 id="pergunta"></h2>
+      <div id="opcoes"></div>
+      <button class="voltar" id="btnVoltar" onclick="voltar()">← voltar</button>
+    </div>
+  </section>
+
+  <section id="resultado" class="hide res">
+    <div class="card">
+      <div class="nivel" id="rNivel"></div>
+      <h2 id="rTitulo"></h2>
+      <p id="rTexto"></p>
+      <h3 style="font-size:18px;margin-top:10px">Onde o seu corpo está pedindo mais atenção</h3>
+      <div class="areas" id="rAreas"></div>
+      <div class="box">
+        <h3>🎁 Seu presente: o guia dos 7 sinais</h3>
+        <p style="font-size:15px;margin-bottom:16px">O que cada sinal quer dizer, o que fazer ainda hoje, um checklist para levar à consulta e um diário de 7 dias.</p>
+        <div class="actions">
+          <a class="btn" id="btnGuia" href="7-sinais-reset-feminino-50.pdf" target="_blank" rel="noopener" onclick="track('baixar_guia')">📖 Baixar meu guia gratuito</a>
+        </div>
+      </div>
+      <div class="cta">
+        <h3>Quer o caminho completo?</h3>
+        <p style="margin-bottom:16px">O Método Reset Feminino 50+ organiza tudo numa sequência: cortisol, sono, mente, intestino e metabolismo — com plano de 90 dias e garantia de 7 dias.</p>
+        <div class="actions"><a class="btn" href="index.html" onclick="track('ver_metodo')">Conhecer o Método Reset →</a></div>
+      </div>
+      <div style="text-align:center;margin-top:18px"><button class="voltar" onclick="location.reload()">Refazer o teste</button></div>
+    </div>
+  </section>
+
+  <p class="aviso">Este teste é educativo e não é um diagnóstico. Converse sempre com a sua médica sobre os seus sintomas.<br><a href="politica-de-privacidade.html" style="color:inherit">Política de Privacidade</a> · <a href="termos-de-uso.html" style="color:inherit">Termos de Uso</a></p>
+</main>
+
+<script>
+const OPC=[["Nunca",0],["Às vezes",1],["Com frequência",2],["Quase sempre",3]];
+const P=[
+ {t:"Você acorda cansada, mesmo depois de uma noite inteira na cama?",a:"Cansaço e cortisol"},
+ {t:"Você acorda de madrugada (por volta das 3h) e tem dificuldade para voltar a dormir?",a:"Sono"},
+ {t:"Você sente ondas de calor ou acorda suada à noite?",a:"Ondas de calor"},
+ {t:"Você esquece palavras no meio da frase ou o que ia fazer?",a:"Névoa mental"},
+ {t:"A sua barriga aumentou, mesmo sem você comer mais do que antes?",a:"Barriga e metabolismo"},
+ {t:"Você se irrita com facilidade ou sente o humor oscilar sem motivo?",a:"Humor"},
+ {t:"Você sente ansiedade ou um aperto no peito sem saber por quê?",a:"Humor"},
+ {t:"Você sente o intestino preso, inchaço ou gases com frequência?",a:"Intestino"},
+ {t:"Você sente vontade forte de doce ou carboidrato no fim da tarde?",a:"Barriga e metabolismo"},
+ {t:"Você sente que precisa de café para funcionar durante o dia?",a:"Cansaço e cortisol"}
+];
+let i=0,r=[];
+function track(e){try{if(window.gtag)gtag('event',e)}catch(x){}}
+function comecar(){document.getElementById('intro').classList.add('hide');document.getElementById('quiz').classList.remove('hide');track('teste_inicio');mostrar();}
+function mostrar(){
+ document.getElementById('barra').style.width=(i/P.length*100)+'%';
+ document.getElementById('contador').textContent='Pergunta '+(i+1)+' de '+P.length;
+ document.getElementById('pergunta').textContent=P[i].t;
+ const o=document.getElementById('opcoes');o.innerHTML='';
+ OPC.forEach(([txt,v])=>{const b=document.createElement('button');b.className='opt';b.textContent=txt;b.onclick=()=>responder(v);o.appendChild(b);});
+ document.getElementById('btnVoltar').style.visibility=i?'visible':'hidden';
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function responder(v){r[i]=v;i++;if(i<P.length)mostrar();else resultado();}
+function voltar(){if(i>0){i--;mostrar();}}
+function resultado(){
+ document.getElementById('quiz').classList.add('hide');
+ document.getElementById('resultado').classList.remove('hide');
+ const tot=r.reduce((a,b)=>a+b,0);
+ let n,t,x;
+ if(tot<=8){n='Resultado: sinais leves';t='Seu corpo está começando a dar sinais.';x='Você está num bom momento para agir: pequenos ajustes agora evitam que os sinais se somem. O guia abaixo mostra o que fazer com cada um.';}
+ else if(tot<=17){n='Resultado: sinais moderados';t='Os sinais estão se somando — e isso tem explicação.';x='Não é "só a idade" nem falta de força de vontade. É uma reorganização hormonal, e ela responde bem a um plano organizado, um passo de cada vez.';}
+ else{n='Resultado: sinais intensos';t='Seu corpo está pedindo um Reset completo.';x='Vários sinais ao mesmo tempo costumam ter a mesma raiz. Leve o checklist do guia à sua médica e comece por onde o seu corpo mais precisa — não espere "passar sozinho".';}
+ document.getElementById('rNivel').textContent=n;
+ document.getElementById('rTitulo').textContent=t;
+ document.getElementById('rTexto').textContent=x;
+ const ar={};P.forEach((p,k)=>{ar[p.a]=ar[p.a]||[0,0];ar[p.a][0]+=r[k];ar[p.a][1]+=3;});
+ const lista=Object.entries(ar).map(([a,[s,m]])=>[a,s/m]).sort((a,b)=>b[1]-a[1]);
+ document.getElementById('rAreas').innerHTML=lista.map(([a,p])=>'<div class="area"><span>'+a+'</span><div class="bar"><div style="width:'+Math.max(4,Math.round(p*100))+'%"></div></div></div>').join('');
+ track('teste_fim');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+<script>
+(function(){
+  if (localStorage.getItem('cookies_ok') === '1') {
+    var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-K8N1JLXXVE';document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-K8N1JLXXVE',{anonymize_ip:true});
+  }
+})();
+</script>
+</body>
+</html>
