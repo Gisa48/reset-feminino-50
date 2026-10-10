@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Método Reset Feminino 50+ | Reequilibre hormônios e recupere sua energia</title>
-<meta name="description" content="Programa completo de 6 módulos para mulheres acima dos 50 anos: cortisol, sono, clareza mental, intestino, metabolismo hormonal e plano de 90 dias. Inclui 5 bônus exclusivos. Acesso imediato.">
+<meta name="description" content="Programa completo de 6 módulos para mulheres acima dos 50 anos: cortisol, sono, clareza mental, intestino, metabolismo hormonal e plano de 90 dias. Inclui 6 bônus exclusivos. Acesso imediato.">
 <meta name="theme-color" content="#1C3A2E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,6 +23,7 @@
     gtag('js', new Date());
     gtag('config', 'G-K8N1JLXXVE', {anonymize_ip: true});
   }
+  function track(nome){ try { if (window.gtag) { gtag('event', nome); } } catch (e) {} }
   if (localStorage.getItem('cookies_ok') === '1') { loadGA(); }
 </script>
 <style>
@@ -345,10 +346,17 @@
   .autora-texto{max-width:680px;margin:0 auto;font-size:16px;line-height:1.75;}
   .autora-texto p{margin-bottom:16px;}
   .autora-texto .assinatura{font-style:italic;color:var(--verde-escuro);font-weight:600;text-align:right;}
+  .autora-foto{width:160px;height:160px;border-radius:50%;margin:0 auto 22px;background-image:url('https://hotmart.s3.amazonaws.com/profile_pictures/8748d26c-8ce8-4f4b-9126-baed353f2c3b/fotocerta.jpg');background-size:184px 177.3px;background-position:-12px -4.2px;background-repeat:no-repeat;border:3px solid rgba(255,255,255,.92);box-shadow:0 6px 22px rgba(28,58,46,.18);}
   .gratis{padding:48px 0 0;}
   .gratis-card{max-width:680px;margin:0 auto;text-align:center;border:2px dashed var(--verde-escuro);border-radius:16px;padding:32px 24px;}
   .gratis-card h2{font-size:clamp(22px,3.5vw,30px);margin-bottom:10px;}
   .gratis-card p{margin-bottom:20px;}
+  .cap-inline{display:flex;flex-direction:column;gap:10px;max-width:420px;margin:0 auto;text-align:left;}
+  .cap-inline input[type=text],.cap-inline input[type=email]{padding:14px 16px;border:1px solid #cfd8d2;border-radius:10px;font-size:16px;font-family:inherit;width:100%;}
+  .cap-inline .gdpr{font-size:13px;line-height:1.45;display:flex;gap:8px;align-items:flex-start;}
+  .cap-inline .gdpr input{margin-top:3px;}
+  .cap-inline .lgpd{font-size:12px;opacity:.75;margin:0;}
+  .cap-inline .btn{width:100%;}
   .btn-sec{background:transparent!important;color:var(--verde-escuro)!important;border:2px solid var(--verde-escuro);}
 </style>
 </head>
@@ -462,6 +470,7 @@
     <span class="eyebrow">Quem está por trás do método</span>
     <h2>Da enfermagem ao Método Reset</h2>
     <div class="autora-texto">
+      <div class="autora-foto" role="img" aria-label="Gisele Fabiane Ribeiro Carlos, autora do Método Reset Feminino 50+"></div>
       <p>Sou a Mayra Sterling. Durante mais de 10 anos fui <strong>técnica de enfermagem em home care</strong> no Brasil. Dar banho, mudar de decúbito, cuidar de pacientes acamados — é um trabalho bonito, mas que exige muita força física.</p>
       <p>Aos 48 anos, o meu corpo começou a dar sinais. Noites acordada, cansaço que não passava, dores, a mente mais lenta — e exames "normais". Eu já não tinha a força que a profissão pedia. Precisei mudar: de lugar, de vida e de cuidado com a minha própria saúde.</p>
       <p>Foi aí que decidi continuar a cuidar de mulheres de outra forma: <strong>pensar e escrever, escrever e pensar</strong> — criar materiais que informem e ajudem muitas mulheres que estão passando pelo mesmo que eu passei.</p>
@@ -489,9 +498,27 @@
 <section class="gratis">
   <div class="container">
     <div class="gratis-card">
-      <h2>Ainda em dúvida? Faça o teste grátis.</h2>
-      <p>Em 2 minutos, descubra quais sinais da menopausa o seu corpo está dando — e ganhe de presente o guia <strong>"7 sinais de que seu corpo está pedindo um Reset"</strong>, com checklist para levar à consulta.</p>
-      <a href="teste.html" class="btn btn-sec">🌿 Fazer o teste grátis →</a>
+      <h2>Ainda em dúvida? Receba o guia grátis.</h2>
+      <p>Deixe seu e-mail e receba na hora o guia <strong>"7 sinais de que seu corpo está pedindo um Reset"</strong> — o que cada sinal quer dizer, o que fazer ainda hoje, checklist para levar à consulta e um diário de 7 dias. Prefere começar pelo teste? <a href="teste.html">Faça o teste de 2 minutos →</a></p>
+      <script src="//send.hotmart.com/static/js/recaptcha.min.js"></script>
+      <form class="cap cap-inline" klicksend-form-id='plu3AOz' autocomplete='off' method="post" action="//handler.send.hotmart.com/subscription/plu3AOz?hotfeature=53" onsubmit="track('lead_pagina')">
+        <input type="text" autocomplete="off" name="first_name" placeholder="Seu primeiro nome" value="">
+        <input type="email" autocomplete="off" name="email" placeholder="Seu melhor e-mail" value="" required>
+        <label class="gdpr"><input type="checkbox" autocomplete="off" name="gdpr" value="Concordo em receber os e-mails" required> Concordo em receber os e-mails da Mayra Sterling. Posso sair da lista quando quiser.</label>
+        <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" autocomplete="new-password" name="b_plu3AOz" tabindex="-1" value=""></div>
+        <button klicksend-form-submit-id='plu3AOz' class="g-recaptcha btn">📖 Quero meu guia gratuito</button>
+        <p class="lgpd">Seus dados são usados apenas para enviar conteúdos e ofertas. <a href="https://hotmart.com/pt-br/legal/privacidade-de-dados/" target="_blank" rel="noopener">Privacidade de dados</a>.</p>
+        <script>
+        (function(){
+          var form = document.querySelector('form[klicksend-form-id="plu3AOz"]');
+          if (!form) return;
+          var pageParams = new URLSearchParams(window.location.search);
+          var u = new URL(form.action);
+          var base = u.searchParams.size > 0 ? u.searchParams.toString() + '&' : '';
+          form.action = u.origin + u.pathname + '?' + base + pageParams.toString();
+        })();
+        </script>
+      </form>
     </div>
   </div>
 </section>
